@@ -19,7 +19,6 @@ select d.id, d.nombre, MIN(r.resultado) as mejor_tiempo, MAX(r.resultado) as peo
 JOIN eventos e ON r.id_evento = e.id JOIN disciplinas d ON e.id_disciplina = d.id 
 JOIN competicion c ON e.id_competicion = c.id WHERE YEAR(c.fecha_inicio) = 2023 GROUP BY d.nombre DESC;
 
-
 --consulta 5
 select CONCAT(a.nombre, ' ', a.apellido) AS nombre_completo, e.id_competicion, r.puesto, r.resultado from resultados r 
 JOIN atletas a ON r.id_atleta = a.id JOIN eventos e ON r.id_evento = e.id WHERE r.resultado IS NOT NULL AND r.id_evento = 2;
